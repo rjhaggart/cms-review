@@ -1,0 +1,1536 @@
+<?php
+	$DOC_ROOT = $_SERVER['DOCUMENT_ROOT'];
+	include($_SERVER['DOCUMENT_ROOT'].'/media/dundeewebsite/src/inc/classes/t4.class.php');
+
+	$cachebuster = '010715';
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if IE 10]>   <html class="no-js lt-ie11" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+	<!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />-->
+  
+  	<meta charset="UTF-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="google-site-verification" content="5rJouX7NRXLowEgwk0ilGFI3nWFuO1NKJ2yvi8hDlY4" />
+  	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<meta name="author" content="University of Dundee" />
+	<meta name="dcterms.rights" content="Copyright (c) 2010-<?php echo date('Y'); ?> University of Dundee" />
+	
+	<link rel="shortcut icon" href="/media/dundeewebsite/src/img/layout/favicon.ico" />
+	<link rel="apple-touch-icon" href="/media/dundeewebsite/src/img/layout/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-57x57-precomposed.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-72x72-precomposed.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-114x114-precomposed.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-144x144-precomposed.png" />
+		
+	<!-- Stylesheets -->
+	<!--<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css" />
+  	<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css" />-->  	
+  	<?php
+		$cssFile = '/media/dundeewebsite/themes/newhope/css/style.css';
+		if($cssFile != NULL) { 
+			if(1 < strpos($cssFile, 'ctfn=download')) {
+            			echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css" />';
+  				echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css" />';
+            		} else {
+            			echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css?v='.$cachebuster.'" />';
+  				echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css?v='.$cachebuster.'" />';
+            		}
+        	} else {
+        		echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css" />';
+  			echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css" />';
+        	}
+	?>  	
+  	<link rel="stylesheet" type="text/css" media="print" href="/media/dundeewebsite/src/css/print.css" />
+
+  	<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/vendors/owlcarousel/owl.carousel.min.css" />
+	
+	<!-- Scripts -->	
+	<script src="/media/dundeewebsite/vendors/modernizr/modernizr-custom.js"></script>
+	
+	<?php
+		if(1 > strpos($cssFile, 'ctfn=download')) {
+        		echo "<script>
+				// add .wf-loading class to avoid FOUC
+				// use JS to add class to avoid hidding content if JS isn't available
+				if ( navigator.userAgent.indexOf('iPad') == -1 ) {
+					document.documentElement.className += ' wf-loading';
+				}
+				</script>";
+		}
+	?>
+  	
+	<title>University of Dundee</title>
+  	<link rel="alternate" type="application/rss+xml" title="University of Dundee News Feed" href="http://www.dundee.ac.uk/news/rss/index.html" />
+
+	<!-- Description metatag --><meta name="description" content="The University of Dundee, Scotland, is one of the UK's leading universities, internationally recognised for its expertise across a range of disciplines including science, medicine, engineering and art" />
+
+	<!-- Keywords metatag --><meta name="keywords" content="dundee,university,universities,scotland,scottish,uk,undergraduate,postgraduate,graduate,research,courses,art,science,engineering,social science,life science,medicine,dentistry,nursing,law,degree" />
+
+
+	
+  	
+  	
+
+	<!-- Facebook Meta -->
+    <meta property="og:title" content="University of Dundee"/>
+    <meta property="og:site_name" content="University of Dundee" />
+    <meta property="og:image" content="http://www.dundee.ac.uk/media/dundeewebsite/themes/newhope/img/layout/opengraph.jpg" />
+    <meta property="og:image:width" content="470" />
+    <meta property="og:image:height" content="246" />
+
+	<!-- Home Style -->
+	<?php
+		$cssFile = '/media/dundeewebsite/themes/newhope/css/home.css';
+		if($cssFile != NULL) { 
+			if(1 < strpos($cssFile, 'ctfn=download')) {
+            	echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/home.css" />';
+            } else {
+            	echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/home.css?v='.$cachebuster.'" />';
+         	}
+        } else {
+        	echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/home.css" />';
+        }
+	?> 
+  
+	<style type="text/css">
+	    .home .container-video-play{
+			position: relative;
+		}
+
+	    .home .container-video-play a.video-play{
+	        height: 90px;
+			width: 100px;
+			font-size: 4.7em;
+	        color: #fff;
+	        position: absolute;
+	        top: 77.4%;
+	    }
+	    
+	    .home-research-container .research-item-container .research-item:nth-child(1) .container-video-play a.video-play, .home-research-container .research-item-container .research-item:nth-child(2) .container-video-play a.video-play{
+	        /*top: 62.4%;
+	        right: 2.5%;
+	        height: 95px;
+	        width: 105px;
+	        font-size: 5em;
+	        color: #fff;*/
+	    }
+	    
+	    @media screen and (max-width: 1199px){
+	    	.home .container-video-play a.video-play{
+	    		top: 67.4% !important;
+	    	}
+	    }
+	    
+	    @media screen and (max-width: 991px){
+	    	.home .container-video-play a.video-play{
+	    		top: 63.4% !important;
+	    	}
+	    }
+	    
+	    @media screen and (max-width: 767px){
+	    	.home .container-video-play a.video-play{
+	    		top: 79.9% !important;
+	    	}
+	    }
+	    
+	    @media screen and (max-width: 682px){
+	    	.home .container-video-play a.video-play{
+	    		top: 77% !important;
+	    	}
+	    }
+	    
+	    @media screen and (max-width: 580px){
+	    	.home .container-video-play a.video-play{
+	    		top: 72.5% !important;
+	    	}
+	    }
+
+	    @media screen and (max-width: 480px){
+	    	.home .container-video-play a.video-play{
+	    		top: 60.4% !important;
+	    	}
+	    }
+		
+		@media screen and (max-width: 320px){
+	    	.home .container-video-play a.video-play{
+	    		top: 59.2% !important;
+	    		height: 70px;
+				width: 80px;
+				font-size: 3.5em;
+	    	}
+	    }
+	</style>
+
+</head>
+
+<body id="page_55" class="newhope home l-lft-top-btm landing course-finder">
+
+		<a href="#maincontent" class="skiptocontent">Skip to Content</a>
+
+	<div id="wrapper" id="top">
+
+		<div class="navbar navbar-site navbar-default navbar-fixed-top" role="navigation">
+
+          	<div class="navbar-main">
+				<div class="container">
+					<div class="row">
+		
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a onclick="_gaq.push(['_trackPageview', 'main-nav-logo'])" class="navbar-brand logo-default" href="/">University of Dundee</a>
+						</div>
+						<div class="navbar-collapse collapse navbar-responsive-collapse-1">
+                          	<div class="navbar-search-mobile hidden-lg hidden-md">
+                                <div class="input-group">
+                                        <form name="frm-search" class="form-inline" method="get" action="http://search.dundee.ac.uk/s/search.html?" class="frm-search navbar-form" role="search">
+                                            <div class="form-group">
+                                                <label for="frm-search" class="search-label">Search:</label>
+                                                <i class="fa fa-search"></i>
+                                                <input type="text" class="form-control" id="frm-search" name="query" placeholder="Search" />
+                                                <input type="hidden" id="search-filter" name="collection" value="website-meta"/>
+                                            </div><!-- / .form-group -->
+                                        </form>
+                                </div><!-- / .input-group -->
+                            </div><!-- / .navbar-search-mobile -->
+							<ul class="nav navbar-nav navbar-right">
+								<!--<li><a onclick="_gaq.push(['_trackPageview', 'main-nav-home'])" href="/">Home</a></li>-->
+								<?php
+									$currentURL = $_SERVER['PHP_SELF'];
+									
+									if (strpos($currentURL, "/study/")!==false){
+										if (strpos($currentURL, "/studentlife/")==false){
+											echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-study\'])" href="/study/">Study</a></span></li>';
+										} else {
+											echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-study\'])" href="/study/">Study</a></li>';
+										}
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-study\'])" href="/study/">Study</a></li>';
+									}
+
+									if (strpos($currentURL, "/about/")!==false){
+										if (strpos($currentURL, "/about/")==false){
+											echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-about\'])" href="/about/">About</a></span></li>';
+										} else {
+											echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-about\'])" href="/about/">About</a></li>';
+										}
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-about\'])" href="/about/">About</a></li>';
+									}
+									
+									if (strpos($currentURL, "/study/studentlife")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-student-life\'])" href="/study/student-life/">Student Life</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-student-life\'])" href="/study/student-life/">Student Life</a></li>';
+									}
+									
+									if (strpos($currentURL, "/main/research")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-research\'])" href="/main/research/">Research</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-research\'])" href="/main/research/">Research</a></li>';
+									}
+									
+									if (strpos($currentURL, "/main/business")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-business\'])" href="/main/business/">Business</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-business\'])" href="/main/business/">Business</a></li>';
+									}
+									
+									if (strpos($currentURL, "/alumni")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-alumni\'])" href="/alumni/">Alumni</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-business\'])" href="/alumni/">Alumni</a></li>';
+									}
+								?>
+							</ul>
+						</div>
+		
+					</div>
+				</div>
+			</div><!-- / .navbar-main -->
+
+          	<div class="navbar-utility">
+				<div class="container">
+					<div class="row">
+		
+						<div class="navbar-collapse collapse navbar-responsive-collapse-1">
+							<ul class="nav navbar-nav navbar-left">
+								<li class="dropdown">
+									<a href="//www.dundee.ac.uk/students/" class="dropdown-toggle" data-toggle="dropdown">Current Students <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li class="dropdown-header">Popular Resources</li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-webmail'])" href="//webmail.dundee.ac.uk/">Webmail</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-mydundee'])" href="//my.dundee.ac.uk/">My Dundee</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-evision'])" href="//evision.dundee.ac.uk/">eVision</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-timetable'])" href="//timetable.dundee.ac.uk/">University Timetable</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-it'])" href="/it/">IT Support</a></li>
+                                        <li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-library'])" href="/library/">Library</a></li>
+										<li class="divider"></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-student-home'])" href="/students/"><span class="glyphicon glyphicon-home"></span> Current Students</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="//www.dundee.ac.uk/staff/" class="dropdown-toggle" data-toggle="dropdown">Staff <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li class="dropdown-header">Popular Resources</li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-webmail'])" href="//webmail.dundee.ac.uk/">Webmail</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-mydundee'])" href="//my.dundee.ac.uk/">My Dundee</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-timetable'])" href="//timetable.dundee.ac.uk/">University Timetable</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-calendars'])" href="/main/useful-dates/">University Calendars</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-roombookings'])" href="//www.dundee.ac.uk/roombookings/">Room Bookings</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-it'])" href="/it/">IT Support</a></li>
+                                        <li><a onclick="_gaq.push(['_trackPageview', 'staff-evision'])" href="//evision.dundee.ac.uk/">eVision</a></li>
+                                        <li><a onclick="_gaq.push(['_trackPageview', 'staff-library'])" href="/library/">Library</a></li>
+										<li class="divider"></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-staff-home'])" href="/staff/"><span class="glyphicon glyphicon-home"></span> Staff</a></li>
+									</ul>
+								</li>
+                              	<li class="hidden-lg hidden-md"><a href="/main/colleges-schools/">Colleges &amp; Schools</a></li>
+								<li class="hidden-lg hidden-md"><a href="/main/services/">Services</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+                              	<li class="dropdown nav-utility-search-dd search-filters">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> <b class="caret"></b></a>
+                                    <ul class="dropdown-menu filters">
+                                        <li class="dropdown-header">University Search</li>
+                                        <li data-label="Search" data-collection="website-meta" class="active filter"><a href="#">Website Search</a></li>
+                                        <li data-label="Course Finder" data-collection="courses" class="filter"><a href="#">Course Finder</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="//www.dundee.ac.uk/main/a-z/">University A-Z</a></li>
+                                        <li><a href="/main/colleges-schools/">Colleges &amp; Schools</a></li>
+                                        <li><a href="/main/services/">Services</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-utility-search">
+                                    <div class="input-group">
+                                            <form name="frm-search" class="form-inline" method="get" action="http://search.dundee.ac.uk/s/search.html?" class="frm-search navbar-form" role="search">
+                                                <div class="form-group">
+                                                <label for="frm-search" class="search-label">Search:</label>
+                                                <input type="text" class="form-control" id="frm-search" name="query"/>
+                                                <input type="hidden" id="search-filter" name="collection" value="website-meta"/>
+                                                </div><!-- / .form-group -->
+                                            </form>
+                                    </div><!-- / .input-group -->
+                                </li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div><!-- / .navbar-utility -->
+
+			<div class="clearfix"></div>
+		</div><!-- / .navbar -->
+      
+      	<div class="navbar-break"></div>
+
+  
+  	 
+<!-- START New Hope: Banner - text/newhope-banner -->
+<div class="l-container-fluid alert-container postgraduate-taught-courses">
+	<div class="alert" id="postgraduate-taught-courses">
+		<div class="container">
+          <span>Clearing - Check out our course vacancies or call +44(0)1382 386386</span> <a onclick="ga('send', 'event', { eventCategory: 'banner-alert-244213'});" href="http://bit.ly/1K7fFa4">Clearing <i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+</div>
+<!-- END New Hope: Banner - text/newhope-banner -->
+ 
+      
+    <!--<div class="l-container-fluid alert-container postgraduate-taught-courses">
+    	<div class="alert" id="postgraduate-taught-courses">
+    		<div class="container">
+              <span>#testdrivedundee. Get to know our 5 test drivers and follow their journey through our campus and city</span> <a onclick="ga('send', 'event', { eventCategory: 'home-testdrive-2015'});" href="http://testdrive.dundee.ac.uk/">#testdrivedundee <i class="fa fa-angle-right"></i></a>
+    		</div>
+    	</div>
+    </div>-->
+      
+	<div id="main">
+      
+      
+<div id="primary-carousel" class="carousel slide primary-carousel" data-ride="carousel" data-interval="9000">
+	<ol class="carousel-indicators">
+		<!--<li data-target="#primary-carousel" data-slide-to="0" class="active"></li>
+		<li data-target="#primary-carousel" data-slide-to="1"></li>
+		<li data-target="#primary-carousel" data-slide-to="2"></li>
+		<li data-target="#primary-carousel" data-slide-to="3"></li>
+                <li data-target="#primary-carousel" data-slide-to="4"></li>
+		<li data-target="#primary-carousel" data-slide-to="5"></li>-->
+	</ol>
+	<div class="carousel-inner" role="listbox">
+
+		<!-- navigation object : New Hope - Hero Carousel (1/2) --><div class="item active uod_247600" style="background: url(/media/dundeewebsite/themes/newhope/img/home/carousel/clearing.jpg) no-repeat center; background-size: cover;">
+	<div class="container">
+		<div class="carousel-caption slideup">
+			<div class="container">
+				<p class="uodcarousel-caption"><a href = "http://bit.ly/1K7fFa4" >THE CLEARING COUNTDOWN IS ON!<br>Click here to find out about our latest vacancies</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+		<!-- navigation object : New Hope - Hero Carousel (2/2) --><div class="item uod_225307" style="background: url(/media/dundeewebsite/themes/newhope/img/home/carousel/open-day2.jpg) no-repeat center; background-size: cover;">
+	<div class="container">
+		<div class="carousel-caption slideup">
+			<div class="container">
+				<p class="uodcarousel-caption"><a href = "http://bit.ly/1HMgSg0" >Find out about our Open Days - the best way <br>for you to get a real feel for the University</a></p>
+			</div>
+		</div>
+	</div>
+</div><div class="item uod_235976" style="background: url(/media/dundeewebsite/themes/newhope/img/home/carousel/identifyingthedead.jpg) no-repeat center; background-size: cover;">
+	<div class="container">
+		<div class="carousel-caption slideup">
+			<div class="container">
+				<p class="uodcarousel-caption"><a href = "http://bit.ly/1SmTsE7" >Uncover a grave, examine remains and reveal the victim’s identity in this free online course <br>'Identifying the Dead: Forensic Science and Human Identification' </a></p>
+			</div>
+		</div>
+	</div>
+</div><div class="item uod_237249" style="background: url(/media/dundeewebsite/themes/newhope/img/home/carousel/malaria.jpg) no-repeat center; background-size: cover;">
+	<div class="container">
+		<div class="carousel-caption slideup">
+			<div class="container">
+				<p class="uodcarousel-caption"><a href = "http://bit.ly/1L1P3pL" >'Nature' publishes details of potential new anti-malarial drug developed at the University of Dundee's Drug Discovery Unit</a></p>
+			</div>
+		</div>
+	</div>
+</div><div class="item uod_237248" style="background: url(/media/dundeewebsite/themes/newhope/img/home/carousel/petedownes.jpg) no-repeat center; background-size: cover;">
+	<div class="container">
+		<div class="carousel-caption slideup">
+			<div class="container">
+				<p class="uodcarousel-caption"><a href = "http://bit.ly/1gBSDLL" >University Principal, Professor Pete Downes, <br>knighted in Queen's Birthday Honours</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+	</div>
+
+	<a class="left carousel-control" href="#primary-carousel" role="button" data-slide="prev">‹</a>
+	<a class="right carousel-control" href="#primary-carousel" role="button" data-slide="next">›</a>
+</div><!-- / .primary-carousel -->
+
+
+
+<div class="fadein wrapper-course-search">
+	<div class="course-search-wrapper">
+				<div class="container search-course-container">
+					<div class="row">
+				
+						<div class="search-course search-course-shadow">
+							<div class="search-course-input-container">
+								<form class="form-inline" role="form" action="http://search.dundee.ac.uk/s/search.html?collection=courses" method="get">
+									<div class="form-group">
+										<i class="fa fa-search"></i>
+										<label class="sr-only" for="frm-qry-courses">Course Finder</label>
+										<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+										<input type="text" name="query" id="frm-qry-courses" placeholder="Course Finder" class="ui-autocomplete-input" autocomplete="off">
+										<input type="hidden" name="collection" value="courses">
+										<!--<input type="hidden" name="profile" value="_default_preview">-->
+										<button type="submit" name="frmSubmit" id="frm-submit">Find a Course</button>
+									</div>
+								</form>
+							</div>
+							<div>
+								<ul class="search-course-options">
+									<li><a href="http://search.dundee.ac.uk/s/search.html?collection=courses&query=&sort=title" title="">All Courses <i class="fa fa-angle-right"></i></a></li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+				
+					</div>
+				</div>
+			</div>
+</div><!-- / .wrapper-course-search --><!-- navigation object : New Hope - Hero Carousel --> 
+<!-- START New Hope: User Tasks - text/html -->
+<div class="fadein box-actions-container">
+	<div class="container">
+		<div class="box-action">
+			<h4><a class="noicon" href="http://bit.ly/1Odcoob">No 1 for Student Experience</a></h4>
+			<p><a class="noicon" href="http://bit.ly/1Odcoob">We’ve been voted No. 1 in Scotland for the 6th year running</a></p>
+		</div>
+		<div class="box-action">
+			<h4><a class="noicon" href="http://bit.ly/1K7fFa4">Clearing</a></h4>
+			<p><a class="noicon" href="http://bit.ly/1K7fFa4">Check out our course vacancies and apply now</a></p>
+		</div>
+		<div class="box-action">
+			<h4><a class="noicon" href="http://bit.ly/1HMgSg0">Open Days</a></h4>
+			<p><a class="noicon" href="http://bit.ly/1HMgSg0">Book your place now</a></p>
+		</div>
+		<div class="box-action">
+			<h4><a class="noicon" href="http://bit.ly/1K7gPSJ">Scholarships</a></h4>
+			<p><a class="noicon" href="http://bit.ly/1K7gPSJ">Discover more about our generous scholarship packages</a></p>
+		</div>
+	</div>
+</div>
+
+<div class="home-line-container fadein">
+	<hr class="home-line" />
+</div>
+<!-- END New Hope: User Tasks - text/html -->
+ <div class="fadein card-carousel-wrapper">
+	<div class="owl-carousel owl-center loop">
+	    
+		<!-- navigation object : Homepage Card Carousel --><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/registry/graduation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduation-300x150.jpg" alt="Congratulations to the class of 2015 who graduated this summer" title="Congratulations to the class of 2015 who graduated this summer" /></a>
+        <h4><a href="http://www.dundee.ac.uk/registry/graduation/">Summer Graduation 2015</a></h4>
+        <p><a href="http://www.dundee.ac.uk/registry/graduation/">Congratulations to the class of 2015 who graduated this summer
+</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/registry/graduation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduation-300x150.jpg" alt="Congratulations to the class of 2015 who graduated this summer" title="Congratulations to the class of 2015 who graduated this summer" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Congratulations to the class of 2015 who graduated this summer
+"</p>
+		<p class="author">Summer Graduation 2015</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduates.jpg" alt="University of Dundee Graduates" title="University of Dundee Graduates" /></a>
+        <h4><a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/">Fully-Funded Masters</a></h4>
+        <p><a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/">Advance your career at Dundee with 49 fully-funded places available for taught postgraduate study in key economic areas</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduates.jpg" alt="University of Dundee Graduates" title="University of Dundee Graduates" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Advance your career at Dundee with 49 fully-funded places available for taught postgraduate study in key economic areas"</p>
+		<p class="author">Fully-Funded Masters</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/qs-logo.png" alt="QS Logo" title="QS Logo" /></a>
+        <h4><a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015">Dundee ranked in World’s top 1% for six subjects</a></h4>
+        <p><a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015">We feature among the world's elite HE institutions in this year's QS World University Rankings&copy; by Subject.</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/qs-logo.png" alt="QS Logo" title="QS Logo" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"We feature among the world's elite HE institutions in this year's QS World University Rankings&copy; by Subject."</p>
+		<p class="author">Dundee ranked in World’s top 1% for six subjects</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'Quote';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href=""></a>
+        <h4><a href="">Stephen Fry, Actor and former Rector of the University of Dundee</a></h4>
+        <p><a href="">Dundee's setting is probably more extraordinary than any other city in the UK. It is about as ideal - ludicrously ideal - as any setting could be.</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href=""></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Dundee's setting is probably more extraordinary than any other city in the UK. It is about as ideal - ludicrously ideal - as any setting could be."</p>
+		<p class="author">Stephen Fry, Actor and former Rector of the University of Dundee</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/student_library2.jpg" alt="Student in library" title="Student in library" /></a>
+        <h4><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/">International Student Barometer 2014</a></h4>
+        <p><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/">Dundee has been ranked in the World Top 20 and number one in Scotland</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/student_library2.jpg" alt="Student in library" title="Student in library" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Dundee has been ranked in the World Top 20 and number one in Scotland"</p>
+		<p class="author">International Student Barometer 2014</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/accommodation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/accommodation.jpg" alt="Accommodation at University of Dundee" title="Accommodation at University of Dundee" /></a>
+        <h4><a href="http://www.dundee.ac.uk/accommodation/">No. 1 Accommodation</a></h4>
+        <p><a href="http://www.dundee.ac.uk/accommodation/">Our student residences are modern, comfortable, safe &amp; right in the middle of campus as rated No.1 in the THE Student Experience Survey</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/accommodation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/accommodation.jpg" alt="Accommodation at University of Dundee" title="Accommodation at University of Dundee" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Our student residences are modern, comfortable, safe &amp; right in the middle of campus as rated No.1 in the THE Student Experience Survey"</p>
+		<p class="author">No. 1 Accommodation</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dusa.co.uk"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/dusa.jpg" alt="Students Union" title="Students Union" /></a>
+        <h4><a href="http://www.dusa.co.uk">Scotland’s Best Student Union</a></h4>
+        <p><a href="http://www.dusa.co.uk">Our students love their Union. DUSA is consistently voted the best students’ union in Scotland</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dusa.co.uk"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/dusa.jpg" alt="Students Union" title="Students Union" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Our students love their Union. DUSA is consistently voted the best students’ union in Scotland"</p>
+		<p class="author">Scotland’s Best Student Union</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/students-lecture.jpg" alt="Students in lecture" title="Students in lecture" /></a>
+        <h4><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/">A Worldwide Reputation</a></h4>
+        <p><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/">Our University regularly appears at the top end of the UK &amp; world rankings thanks to our excellent teaching, research &amp; student experience</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/students-lecture.jpg" alt="Students in lecture" title="Students in lecture" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Our University regularly appears at the top end of the UK &amp; world rankings thanks to our excellent teaching, research &amp; student experience"</p>
+		<p class="author">A Worldwide Reputation</p>
+    </div>
+
+<?php
+    }      
+?>
+
+		<!-- navigation object : Homepage Card Carousel --><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/registry/graduation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduation-300x150.jpg" alt="Congratulations to the class of 2015 who graduated this summer" title="Congratulations to the class of 2015 who graduated this summer" /></a>
+        <h4><a href="http://www.dundee.ac.uk/registry/graduation/">Summer Graduation 2015</a></h4>
+        <p><a href="http://www.dundee.ac.uk/registry/graduation/">Congratulations to the class of 2015 who graduated this summer
+</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/registry/graduation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduation-300x150.jpg" alt="Congratulations to the class of 2015 who graduated this summer" title="Congratulations to the class of 2015 who graduated this summer" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Congratulations to the class of 2015 who graduated this summer
+"</p>
+		<p class="author">Summer Graduation 2015</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduates.jpg" alt="University of Dundee Graduates" title="University of Dundee Graduates" /></a>
+        <h4><a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/">Fully-Funded Masters</a></h4>
+        <p><a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/">Advance your career at Dundee with 49 fully-funded places available for taught postgraduate study in key economic areas</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/study/pg/scholarships-fees/sfc-funding-programmes/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/graduates.jpg" alt="University of Dundee Graduates" title="University of Dundee Graduates" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Advance your career at Dundee with 49 fully-funded places available for taught postgraduate study in key economic areas"</p>
+		<p class="author">Fully-Funded Masters</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/qs-logo.png" alt="QS Logo" title="QS Logo" /></a>
+        <h4><a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015">Dundee ranked in World’s top 1% for six subjects</a></h4>
+        <p><a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015">We feature among the world's elite HE institutions in this year's QS World University Rankings&copy; by Subject.</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/about/our-rankings/qs-subject-2015"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/qs-logo.png" alt="QS Logo" title="QS Logo" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"We feature among the world's elite HE institutions in this year's QS World University Rankings&copy; by Subject."</p>
+		<p class="author">Dundee ranked in World’s top 1% for six subjects</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'Quote';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href=""></a>
+        <h4><a href="">Stephen Fry, Actor and former Rector of the University of Dundee</a></h4>
+        <p><a href="">Dundee's setting is probably more extraordinary than any other city in the UK. It is about as ideal - ludicrously ideal - as any setting could be.</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href=""></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Dundee's setting is probably more extraordinary than any other city in the UK. It is about as ideal - ludicrously ideal - as any setting could be."</p>
+		<p class="author">Stephen Fry, Actor and former Rector of the University of Dundee</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/student_library2.jpg" alt="Student in library" title="Student in library" /></a>
+        <h4><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/">International Student Barometer 2014</a></h4>
+        <p><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/">Dundee has been ranked in the World Top 20 and number one in Scotland</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/isb-2014/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/student_library2.jpg" alt="Student in library" title="Student in library" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Dundee has been ranked in the World Top 20 and number one in Scotland"</p>
+		<p class="author">International Student Barometer 2014</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/accommodation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/accommodation.jpg" alt="Accommodation at University of Dundee" title="Accommodation at University of Dundee" /></a>
+        <h4><a href="http://www.dundee.ac.uk/accommodation/">No. 1 Accommodation</a></h4>
+        <p><a href="http://www.dundee.ac.uk/accommodation/">Our student residences are modern, comfortable, safe &amp; right in the middle of campus as rated No.1 in the THE Student Experience Survey</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/accommodation/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/accommodation.jpg" alt="Accommodation at University of Dundee" title="Accommodation at University of Dundee" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Our student residences are modern, comfortable, safe &amp; right in the middle of campus as rated No.1 in the THE Student Experience Survey"</p>
+		<p class="author">No. 1 Accommodation</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dusa.co.uk"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/dusa.jpg" alt="Students Union" title="Students Union" /></a>
+        <h4><a href="http://www.dusa.co.uk">Scotland’s Best Student Union</a></h4>
+        <p><a href="http://www.dusa.co.uk">Our students love their Union. DUSA is consistently voted the best students’ union in Scotland</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dusa.co.uk"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/dusa.jpg" alt="Students Union" title="Students Union" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Our students love their Union. DUSA is consistently voted the best students’ union in Scotland"</p>
+		<p class="author">Scotland’s Best Student Union</p>
+    </div>
+
+<?php
+    }      
+?><?php
+	$cCardType = 'General';
+	
+	if($cCardType == 'General') {
+?>
+
+    <div class="item">
+      	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/students-lecture.jpg" alt="Students in lecture" title="Students in lecture" /></a>
+        <h4><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/">A Worldwide Reputation</a></h4>
+        <p><a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/">Our University regularly appears at the top end of the UK &amp; world rankings thanks to our excellent teaching, research &amp; student experience</a></p>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Image') {
+?>
+
+	<div class="item image">
+    	<a href="http://www.dundee.ac.uk/about/our-reputation/our-rankings/"><img src="/media/dundeewebsite/themes/newhope/img/home/cardcarousel/students-lecture.jpg" alt="Students in lecture" title="Students in lecture" /></a>
+    </div>
+
+<?php
+    } elseif($cCardType == 'Quote') {
+?>
+
+	<div class="item quote">
+      	<p>"Our University regularly appears at the top end of the UK &amp; world rankings thanks to our excellent teaching, research &amp; student experience"</p>
+		<p class="author">A Worldwide Reputation</p>
+    </div>
+
+<?php
+    }      
+?>
+
+	</div>
+	<div class="partial-focus pf-prev"></div>
+	<div class="partial-focus pf-next"></div>
+</div><!-- / .card-carousel-wrapper -->
+
+<div class="home-line-container fadein">
+	<hr class="home-line" />
+</div><div class="fadein home-research-container">
+	<h2>Research at Dundee</h2>
+	<div class="research-item-container">
+		<!-- navigation object : New Hope - Research -->     
+<!-- START New Hope: Research - text/html -->
+<?php
+	$displayVideo = '';
+	$displayVideoLink = '';
+?>
+<div class="research-item">
+  	<?php
+		if($displayVideo != NULL && $displayVideoLink != NULL) {
+        	echo '<div class="container-video-play"><a href="'.$displayVideoLink.'" class="fancybox fancybox.iframe glyphicon glyphicon-play-circle video-play" data-fancybox-group="gallery"></a><img src="/media/dundeewebsite/themes/newhope/img/home/research/fibre.jpg"
+  alt="Breakthrough in fibre optics opens up possibility of better understanding of disease and communication revolution"
+  title="Breakthrough in fibre optics opens up possibility of better understanding of disease and communication revolution"
+  style="width : 598px;
+    height : 395px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></div>';
+        } else {
+        	echo '<a href="/news/2015/breakthrough-in-fibre-optics-opens-up-possibility-of-better-understanding-of-disease-and-communication-revolution.php"><img src="/media/dundeewebsite/themes/newhope/img/home/research/fibre.jpg"
+  alt="Breakthrough in fibre optics opens up possibility of better understanding of disease and communication revolution"
+  title="Breakthrough in fibre optics opens up possibility of better understanding of disease and communication revolution"
+  style="width : 598px;
+    height : 395px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></a>'; 
+        }
+	?>
+  	<!--<a href="/news/2015/breakthrough-in-fibre-optics-opens-up-possibility-of-better-understanding-of-disease-and-communication-revolution.php"><img src="/media/dundeewebsite/themes/newhope/img/home/research/fibre.jpg"
+  alt="Breakthrough in fibre optics opens up possibility of better understanding of disease and communication revolution"
+  title="Breakthrough in fibre optics opens up possibility of better understanding of disease and communication revolution"
+  style="width : 598px;
+    height : 395px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></a>-->
+	<div class="details">
+		<h4><a href="/news/2015/breakthrough-in-fibre-optics-opens-up-possibility-of-better-understanding-of-disease-and-communication-revolution.php">Breakthrough in fibre optics opens up possibility of better understanding of disease and communication revolution</a></h4>
+		<p><a href="/news/2015/breakthrough-in-fibre-optics-opens-up-possibility-of-better-understanding-of-disease-and-communication-revolution.php">A new study from the University of Dundee could open up a new era of superfast communications technology and lead to breakthroughs in the treatment of medical conditions such as Alzheimer’s.</a></p>
+	</div>
+</div>
+<!-- END New Hope: Research - text/html -->
+      
+<!-- START New Hope: Research - text/html -->
+<?php
+	$displayVideo = '';
+	$displayVideoLink = '';
+?>
+<div class="research-item">
+  	<?php
+		if($displayVideo != NULL && $displayVideoLink != NULL) {
+        	echo '<div class="container-video-play"><a href="'.$displayVideoLink.'" class="fancybox fancybox.iframe glyphicon glyphicon-play-circle video-play" data-fancybox-group="gallery"></a><img src="/media/dundeewebsite/themes/newhope/img/home/research/malaria-video-598x395.jpg"
+  alt="New malaria treatment developed at the Drug Discovery Unit "
+  title="New malaria treatment developed at the Drug Discovery Unit "
+  style="width : 598px;
+    height : 395px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></div>';
+        } else {
+        	echo '<a href="/news/2015/discovery-of-a-novel-antimalarial-compound-published-in-nature.php"><img src="/media/dundeewebsite/themes/newhope/img/home/research/malaria-video-598x395.jpg"
+  alt="New malaria treatment developed at the Drug Discovery Unit "
+  title="New malaria treatment developed at the Drug Discovery Unit "
+  style="width : 598px;
+    height : 395px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></a>'; 
+        }
+	?>
+  	<!--<a href="/news/2015/discovery-of-a-novel-antimalarial-compound-published-in-nature.php"><img src="/media/dundeewebsite/themes/newhope/img/home/research/malaria-video-598x395.jpg"
+  alt="New malaria treatment developed at the Drug Discovery Unit "
+  title="New malaria treatment developed at the Drug Discovery Unit "
+  style="width : 598px;
+    height : 395px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></a>-->
+	<div class="details">
+		<h4><a href="/news/2015/discovery-of-a-novel-antimalarial-compound-published-in-nature.php">Potential new anti-malarial drug published in Nature</a></h4>
+		<p><a href="/news/2015/discovery-of-a-novel-antimalarial-compound-published-in-nature.php">Compound developed in Dundee could both treat malaria and reduce transmission</a></p>
+	</div>
+</div>
+<!-- END New Hope: Research - text/html -->
+      
+<!-- START New Hope: Research - text/html -->
+<?php
+	$displayVideo = '';
+	$displayVideoLink = '';
+?>
+<div class="research-item">
+  	<?php
+		if($displayVideo != NULL && $displayVideoLink != NULL) {
+        	echo '<div class="container-video-play"><a href="'.$displayVideoLink.'" class="fancybox fancybox.iframe glyphicon glyphicon-play-circle video-play" data-fancybox-group="gallery"></a><img src="/media/dundeewebsite/themes/newhope/img/home/research/impact598395.jpg"
+  alt="Learn about the impact of our world class research"
+  title="Learn about the impact of our world class research"
+  style="width : 598px;
+    height : 340px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></div>';
+        } else {
+        	echo '<a href="/main/research/researchimpact/"><img src="/media/dundeewebsite/themes/newhope/img/home/research/impact598395.jpg"
+  alt="Learn about the impact of our world class research"
+  title="Learn about the impact of our world class research"
+  style="width : 598px;
+    height : 340px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></a>'; 
+        }
+	?>
+  	<!--<a href="/main/research/researchimpact/"><img src="/media/dundeewebsite/themes/newhope/img/home/research/impact598395.jpg"
+  alt="Learn about the impact of our world class research"
+  title="Learn about the impact of our world class research"
+  style="width : 598px;
+    height : 340px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/></a>-->
+	<div class="details">
+		<h4><a href="/main/research/researchimpact/">Learn about the impact of our world class research</a></h4>
+		<p><a href="/main/research/researchimpact/">&nbsp;</a></p>
+	</div>
+</div>
+<!-- END New Hope: Research - text/html -->
+ 
+	</div>
+	<div class="research-news-container">
+		<!-- navigation object : New Hope Research KS --><ul><li><a href="/news/2015/immune-system-on-switch-breakthrough-could-lead-to-new-targeted-drugs.php">Immune system ‘on switch’ breakthrough could lead to new targeted drugs</a> <span>20 July 2015</span></li><li><a href="/news/2015/professor-irwin-mclean-awarded-buchanan-medal-by-royal-society.php">Professor Irwin McLean awarded Buchanan Medal by Royal Society</a> <span>20 July 2015</span></li><li><a href="/news/2015/research-project-to-lay-foundations-for-offshore-wind-farms.php">Research project to lay foundations for offshore wind farms</a> <span>14 July 2015</span></li></ul>	</div>
+	<div class="clearfix"></div>
+	<hr class="home-line" />
+	<p class="home-more-link"><a href="/main/research/">More on our Research <i class="fa fa-angle-right"></i></a></p>
+</div> 
+
+<?php
+require_once($_SERVER['DOCUMENT_ROOT'] . '/media/dundeewebsite/global/include/classes/httpRequest.class.php');
+$results = httpRequest::getFileContents('http://wcm-stage.dundee.ac.uk/news/required/');
+echo $results;
+?>
+
+ 
+<div class="fadein wrapper-events">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-events">
+				<h2>Upcoming Events</h2>
+				<!-- navigation object : UoD Events-Homepage Top Content --> 
+<!-- START Event - text/uod-home-events-newhope-two -->
+<?php
+	$articleContent = <<<EOD
+<p>If you're a writer or a reader, a student or a librarian, an illustrator or journalist or someone who loves books and would like to blether with others who do too, join us for our last Monday-of-the-monthly Literary Dundee Literary Lock-In.</p>
+<p>There will be no speechifying and no readings, just an opportunity for Dundee's literary community to mingle and mix and be in the George Orwell. It's free, drop in, and we'll be there for a wee while, awaiting your chat.</p>
+<p>Contact: Peggy Hughes<br /> e: <a href="mailto:p.z.hughes@dundee.ac.uk">p.z.hughes@dundee.ac.uk</a><br /> t: 01382 386 995</p>
+EOD;
+	$articleContent = strip_tags($articleContent);
+
+	$eventStartDateFull = '27 July';
+	$eventEndDateFull = '27 July';
+
+	$eventStartDate = '27';
+	$eventEndDate = '27';
+
+	if($eventStartDateFull != $eventEndDateFull){
+  		$outputDate = $eventStartDate . '-' . $eventEndDate;
+    } else {
+    	$outputDate = $eventStartDate;
+    }
+?>
+
+<div class="event-item">
+	<div class="date-badge"><span class="day">July</span><span class="month"><?php echo $outputDate; ?></span></div>
+	<h4><a href="/events/2015/270715-literary-dundees-literary-lock-in-july.php">Literary Dundee's Literary Lock-In: July</a></h4>
+	<p><a href="/events/2015/270715-literary-dundees-literary-lock-in-july.php"><?php echo substr($articleContent,0,90) . '...'; ?></a></p>
+</div>
+<!-- END Event - text/uod-home-events-newhope-two -->
+ 
+
+
+
+
+<!-- START Event - text/uod-home-events-newhope-one -->
+<!--<?php
+	$articleContent = <<<EOD
+Connecting the city's reader and writers and the University through the joy of books and banter!
+EOD;
+	$articleContent = strip_tags($articleContent);
+?>
+
+<div class="event-item first">
+	<div class="event-image">
+		<a href="/events/2015/270715-literary-dundees-literary-lock-in-july.php"></a>
+	</div>
+	<div class="event-details">
+		<div class="date-badge"><span class="day">July</span><span class="month">27</span></div>
+		<h4><a href="/events/2015/270715-literary-dundees-literary-lock-in-july.php">Literary Dundee's Literary Lock-In: July</a></h4>
+		<p><a href="/events/2015/270715-literary-dundees-literary-lock-in-july.php"><?php echo substr($articleContent,0,160) . '...'; ?></a></p>
+	</div>
+</div>-->
+<!-- END Event - text/uod-home-events-newhope-one -->
+ 
+
+ 
+<!-- START Event - text/uod-home-events-newhope-two -->
+<?php
+	$articleContent = <<<EOD
+<p>We're open every Friday 2-4.30pm until 4 September. Come along to see the many amazing animals from around the world collected by D'Arcy. Some intriguing specimens have gone on display for the first time, including a Tayra and Rat-Kangaroo! Lots of things for the kids as well. Enter by Carnelley front door</p>
+<p>Please note that the museum is only open Friday afternoons 2-4:30pm.&nbsp; If you wish to see the museum at any other time Monday-Friday please contact us!</p>
+<p>Contact: Matthew Jarron<br /> e: <a href="mailto:museum@dundee.ac.uk">museum@dundee.ac.uk</a><br /> t: 01382 384310</p>
+EOD;
+	$articleContent = strip_tags($articleContent);
+
+	$eventStartDateFull = '12 June';
+	$eventEndDateFull = '4 September';
+
+	$eventStartDate = '12';
+	$eventEndDate = '04';
+
+	if($eventStartDateFull != $eventEndDateFull){
+  		$outputDate = $eventStartDate . '-' . $eventEndDate;
+    } else {
+    	$outputDate = $eventStartDate;
+    }
+?>
+
+<div class="event-item">
+	<div class="date-badge"><span class="day">June</span><span class="month"><?php echo $outputDate; ?></span></div>
+	<h4><a href="/events/2015/120615-darcy-thompson-zoology-museum-open-for-the-summer.php">D'Arcy Thompson Zoology Museum Open for the Summer</a></h4>
+	<p><a href="/events/2015/120615-darcy-thompson-zoology-museum-open-for-the-summer.php"><?php echo substr($articleContent,0,90) . '...'; ?></a></p>
+</div>
+<!-- END Event - text/uod-home-events-newhope-two -->
+ 
+
+
+
+
+<!-- START Event - text/uod-home-events-newhope-one -->
+<!--<?php
+	$articleContent = <<<EOD
+The D'Arcy Thompson Zoology Museum re-opens for the summer season - Friday afternoons only
+EOD;
+	$articleContent = strip_tags($articleContent);
+?>
+
+<div class="event-item first">
+	<div class="event-image">
+		<a href="/events/2015/120615-darcy-thompson-zoology-museum-open-for-the-summer.php"></a>
+	</div>
+	<div class="event-details">
+		<div class="date-badge"><span class="day">June</span><span class="month">12</span></div>
+		<h4><a href="/events/2015/120615-darcy-thompson-zoology-museum-open-for-the-summer.php">D'Arcy Thompson Zoology Museum Open for the Summer</a></h4>
+		<p><a href="/events/2015/120615-darcy-thompson-zoology-museum-open-for-the-summer.php"><?php echo substr($articleContent,0,160) . '...'; ?></a></p>
+	</div>
+</div>-->
+<!-- END Event - text/uod-home-events-newhope-one -->
+ 
+
+
+
+				<!-- navigation object : UoD Events-Homepage Top Content 2nd and 3rd article --> 
+<!-- START Event - text/uod-home-events-newhope-two -->
+<?php
+	$articleContent = <<<EOD
+<p>Transmissions is an exhibition that explores the microbial world and the implications of human co-existence with microbial life. The exhibition features work by artists who have collaborated with scientists to consider representations of microbial life, the global impact of microbial diseases and the evolution of antimicrobial resistance.</p>
+<p>Transmissions brings to Dundee recent art works by Mark Doyle, Jo Hodges &amp; Robbie Coleman and Anne Milne, made as a result of a residency programme at the Centre for Immunity, Infection and Evolution at the University of Edinburgh supported by ASCUS Art &amp; Science. Alongside these works of art, the exhibition includes historical artefacts brought together from the Museum Collections and the Archives at the University of Dundee and a selection of current research being conducted at the University of Dundeeand the University of Edinburgh in this area.</p>
+<p>Transmissions is supported by the Medicines for Malaria Venture and is a partnership between LifeSpace: Science Art Research Gallery and ASCUS Art &amp; Science with the Centre for Immunity, Infection and Evolution at the University of Edinburgh.</p>
+<p>Preview: Thursday 11 June 2015, 5-7pm</p>
+<p>Exhibition tour begins at 5pm</p>
+<p>Exhibition: 12 June &ndash; 5 September 2015</p>
+<p>LifeSpace is located at the side entrance to the College of Life Sciences at the very top of Old Hawkhill Road University of Dundee Dundee DD1 5EH</p>
+<p>Saturday 11am-5pm</p>
+<p>Monday to Friday by appointment only</p>
+<p>Contact: LifeSpace Dundee<br /> e: <a href="mailto:Lifespace@dundee.ac.uk">Lifespace@dundee.ac.uk</a><br />t: 01382 381023</p>
+EOD;
+	$articleContent = strip_tags($articleContent);
+
+	$eventStartDateFull = '11 June';
+	$eventEndDateFull = '5 September';
+
+	$eventStartDate = '11';
+	$eventEndDate = '05';
+
+	if($eventStartDateFull != $eventEndDateFull){
+  		$outputDate = $eventStartDate . '-' . $eventEndDate;
+    } else {
+    	$outputDate = $eventStartDate;
+    }
+?>
+
+<div class="event-item">
+	<div class="date-badge"><span class="day">June</span><span class="month"><?php echo $outputDate; ?></span></div>
+	<h4><a href="/events/2015/110615-transmissions-exploring-the-microbial-world.php">Transmissions: Exploring the Microbial World</a></h4>
+	<p><a href="/events/2015/110615-transmissions-exploring-the-microbial-world.php"><?php echo substr($articleContent,0,90) . '...'; ?></a></p>
+</div>
+<!-- END Event - text/uod-home-events-newhope-two -->
+ 
+
+ 
+<!-- START Event - text/uod-home-events-newhope-two -->
+<?php
+	$articleContent = <<<EOD
+<p>This special exhibition celebrates the work of artist Jim Petrie, who died in 2014. A former student of Dundee College of Art (now Duncan of Jordanstone College of Art &amp; Design) and Dundee Training College (now the University&rsquo;s School of Education, Social Work &amp; Community Education), Jim later became a popular art teacher at Kirkton High School but is best known as the man who drew the "world's wildest tomboy" Minnie the Minx for 40 years in DC Thomson's famous comic The Beano.</p>
+<p>The exhibition includes many of his classic Minnie artworks along with other examples of his comics art and some of Jim's paintings and drawings, revealing the full range of his artistic talents. The show has been created with the assistance of Jim's family and DC Thomson &amp; Co Ltd.</p>
+<p>Lamb Gallery</p>
+<p>Tower Building, University of Dundee</p>
+<p>3 June &ndash; 19 September 2015</p>
+<p>Open Mon-Fri 09.30-20.30 Sat 09.30-16.30</p>
+<p>Contact: Matthew Jarron<br /> e: <a href="mailto:museum@dundee.ac.uk">museum@dundee.ac.uk</a><br /> t: 01382 384310</p>
+EOD;
+	$articleContent = strip_tags($articleContent);
+
+	$eventStartDateFull = '11 June';
+	$eventEndDateFull = '11 September';
+
+	$eventStartDate = '11';
+	$eventEndDate = '11';
+
+	if($eventStartDateFull != $eventEndDateFull){
+  		$outputDate = $eventStartDate . '-' . $eventEndDate;
+    } else {
+    	$outputDate = $eventStartDate;
+    }
+?>
+
+<div class="event-item">
+	<div class="date-badge"><span class="day">June</span><span class="month"><?php echo $outputDate; ?></span></div>
+	<h4><a href="/events/2015/110615-jim-petrie-minnie-the-minx-and-more.php">Jim Petrie: Minnie the Minx and More!</a></h4>
+	<p><a href="/events/2015/110615-jim-petrie-minnie-the-minx-and-more.php"><?php echo substr($articleContent,0,90) . '...'; ?></a></p>
+</div>
+<!-- END Event - text/uod-home-events-newhope-two -->
+ 
+
+
+			</div>
+
+		</div>
+		<div class="clearfix"></div>
+		<hr class="home-line" />
+		<p class="home-more-link"><a href="/events/">More Events <i class="fa fa-angle-right"></i></a></p>
+	</div>
+</div><!-- / .wrapper-events -->		</div><!-- / #main -->
+
+		<div class="push"></div>
+	</div><!-- / .wrapper-site -->
+
+		<footer role="contentinfo">
+
+		<div class="ft-tabs">
+			<div class="container">
+				<a href="/main/feedback/">Leave Feedback</a>
+				<a href="/study/make-an-enquiry/">Make an Enquiry</a>
+			</div>
+		</div><!-- / .ft-tabs -->
+
+		
+
+		
+
+		<div class="ft-top">
+			<div class="container">
+				<div class="row">
+					<ul class="breadcrumb">
+						<li><a href="/" title=""><span class="glyphicon glyphicon-home"></span></a></li>
+                      	<li>HOME</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- / .ft-top -->
+
+			<div class="container">
+			<div class="row">
+
+              			<div class="ft-left">
+					<div class="ft-social">
+						<ul class="fa-ul social">
+							<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-twitter'])" href="http://uod.ac.uk/twitter" title="Twitter"><i class="fa-li fa fa-twitter-square fa-2x"></i>Twitter</a></li>
+							<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-facebook'])" href="http://uod.ac.uk/facebook" title="Facebook"><i class="fa-li fa fa-facebook-square fa-2x"></i>Facebook</a></li>
+							<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-youtube'])" href="http://uod.ac.uk/youtube" title="Twitter"><i class="fa-li fa fa-youtube-square fa-2x"></i>YouTube</a></li>
+						</ul>
+					</div><!-- / .ft-social -->
+				</div><!-- / .ft-left -->
+	
+				<div class="ft-links">
+					<ul>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-about'])" href="/about/">About</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-study'])" href="/study/">Study</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-studentlife'])" href="/study/student-life/">Student Life</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-research'])" href="/main/research/">Research</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-business'])" href="/main/business/">Business</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-alumni'])" href="/alumni/">Alumni</a></li>
+                    </ul>
+                    <ul>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-ugadmissions'])" href="/study/ug/">Undergraduate Admissions</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-pgadmissions'])" href="/study/pg/">Postgraduate Admissions</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-interadmissions'])" href="/study/international/">International Admissions</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-uniadmissions'])" href="/accommodation/">University Accommodation</a></li>
+                    </ul>
+                    <ul>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-collegesandschools'])" href="/main/colleges-schools/">Colleges &amp; Schools</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-services'])" href="/main/services/">Services</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-disabilitysupport'])" href="/disabilityservices/">Disability Support</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-jobs'])" href="//jobs.dundee.ac.uk/">Jobs</a></li>
+                    </ul>
+				</div><!-- / .ft-links -->
+				
+				<div class="ft-address">
+					<address>
+						<strong>University of Dundee</strong><br/>
+						Nethergate<br/>
+						Dundee<br/>
+						Scotland, UK<br/>
+						DD1 4HN
+					</address>
+					<ul>
+						<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-contact'])" href="/contact/">Contact</a></li><!--
+						--><li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-travel'])" href="/travel/">Travel</a></li><!--
+--><li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-campusmap'])" href="/main/campusmap/">Campus Map</a></li>
+					</ul>
+				</div><!-- / .ft-address -->
+
+			</div>
+		</div><!-- / .container -->
+		
+      		<div class="ft-block">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="logo-qap">
+                        <a href="//www.dundee.ac.uk/about/our-awards/"><img src="/media/dundeewebsite/src/img/layout/footer/qap.png" alt="Queen's Anniversary Prize" /></a>
+                    </div>
+    
+                    <div class="logo-athena">
+                        <a href="//www.dundee.ac.uk/about/our-awards/"><img src="/media/dundeewebsite/src/img/layout/footer/athena-swan.png" alt="Athena Swan Bronze Award" /></a>
+                    </div>
+    
+                    <div class="logo-the">
+                        <a href="//www.dundee.ac.uk/about/our-awards/"><img src="/media/dundeewebsite/src/img/layout/footer/the.png" alt="THE - Times Higher Education" /></a>
+                    </div>
+    
+                </div>
+            </div><!-- / .container -->
+        </div>
+    
+        <div class="ft-block">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="logo-group">
+                        <a href="//www.ahspartnership.org.uk/"><img src="/media/dundeewebsite/src/img/layout/footer/ahsp.png" alt="AHSP - Academic Health Science Partnership in Tayside" class="logo-ahsp" /></a>
+                        <a href="//www.dundeecityofdesign.com"><img src="/media/dundeewebsite/src/img/layout/footer/unesco.png" alt="UNESCO - United Nations Educational, Scientific and Cultural Organization" class="logo-unesco" /></a>
+                        <a href="//www.vandadundee.org/"><img src="/media/dundeewebsite/src/img/layout/footer/vanda.png" alt="Founding partner of V&amp;A Museum of Design Dundee" class="logo-vanda" /></a>
+                    </div>
+    
+                </div>
+            </div><!-- / .container -->
+        </div>
+      	
+		<div class="ft-bottom">
+			<div class="container">
+				<div class="row">
+               
+                  			<ul>
+						<li>The University of Dundee is a Scottish Registered Charity, No. SC015096</li>
+						<li> &copy; University of Dundee</li>
+						<li><a onclick="_gaq.push(['_trackPageview', 'legal-nav-disclaimer'])" href="/legal/disclaimer/">Disclaimer</a></li>
+					</ul>
+					<a href="#top" class="back-top">BACK TO TOP <span class="glyphicon glyphicon-arrow-up"></span></a>
+                  
+				</div>
+			</div>
+		</div><!-- / .ft-bottom -->
+
+	</footer>
+	
+	<!-- Scripts -->
+	<?php
+		$scriptMain = '/media/dundeewebsite/themes/newhope/js/main010715.js';
+		if(!strpos($scriptMain, 'SiteManager?ctfn') !== FALSE) {
+        		$scriptMain = substr($scriptMain, 0, -3);
+		}
+	?>
+	<script data-main="<?php echo $scriptMain; ?>" src="/media/dundeewebsite/vendors/requirejs/require.js"></script>
+	
+	<script type="text/javascript">
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName("script")[0];
+      a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/1666.js?"+Math.floor(new Date().getTime()/3600000);
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+    
+	<script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-2239292-1', 'dundee.ac.uk');
+      ga('send', 'pageview');
+    </script>
+
+	<a class="t4Edit-page" href="https://wcm.dundee.ac.uk/terminalfour/SiteManager?ctfn=content&amp;fnno=30&amp;sid=55">Edit</a>
+
+	
+
+<!-- tmpl new hope -->
+
+</body>
+</html>

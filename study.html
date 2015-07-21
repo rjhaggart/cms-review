@@ -1,0 +1,625 @@
+<?php
+	$DOC_ROOT = $_SERVER['DOCUMENT_ROOT'];
+	include($_SERVER['DOCUMENT_ROOT'].'/media/dundeewebsite/src/inc/classes/t4.class.php');
+
+	$cachebuster = '010715';
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if IE 10]>   <html class="no-js lt-ie11" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+	<!--<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />-->
+  
+  	<meta charset="UTF-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="google-site-verification" content="5rJouX7NRXLowEgwk0ilGFI3nWFuO1NKJ2yvi8hDlY4" />
+  	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<meta name="author" content="University of Dundee" />
+	<meta name="dcterms.rights" content="Copyright (c) 2010-<?php echo date('Y'); ?> University of Dundee" />
+	
+	<link rel="shortcut icon" href="/media/dundeewebsite/src/img/layout/favicon.ico" />
+	<link rel="apple-touch-icon" href="/media/dundeewebsite/src/img/layout/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-57x57-precomposed.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-72x72-precomposed.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-114x114-precomposed.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/media/dundeewebsite/src/img/layout/apple-touch-icon-144x144-precomposed.png" />
+		
+	<!-- Stylesheets -->
+	<!--<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css" />
+  	<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css" />-->  	
+  	<?php
+		$cssFile = '/media/dundeewebsite/themes/newhope/css/style.css';
+		if($cssFile != NULL) { 
+			if(1 < strpos($cssFile, 'ctfn=download')) {
+            			echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css" />';
+  				echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css" />';
+            		} else {
+            			echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css?v='.$cachebuster.'" />';
+  				echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css?v='.$cachebuster.'" />';
+            		}
+        	} else {
+        		echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style.css" />';
+  			echo '<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/themes/newhope/css/style2.css" />';
+        	}
+	?>  	
+  	<link rel="stylesheet" type="text/css" media="print" href="/media/dundeewebsite/src/css/print.css" />
+
+  	<link rel="stylesheet" type="text/css" media="screen" href="/media/dundeewebsite/vendors/owlcarousel/owl.carousel.min.css" />
+	
+	<!-- Scripts -->	
+	<script src="/media/dundeewebsite/vendors/modernizr/modernizr-custom.js"></script>
+	
+	<?php
+		if(1 > strpos($cssFile, 'ctfn=download')) {
+        		echo "<script>
+				// add .wf-loading class to avoid FOUC
+				// use JS to add class to avoid hidding content if JS isn't available
+				if ( navigator.userAgent.indexOf('iPad') == -1 ) {
+					document.documentElement.className += ' wf-loading';
+				}
+				</script>";
+		}
+	?>
+  	
+	<title><?php echo t4::formatTitle(array(addslashes("Study"), addslashes("Study"))); ?> : University of Dundee</title>
+
+	<!-- Description metatag --><meta name="description" content="Study a range of undergraduate and postgraduate degree courses at the University of Dundee, Scotland, UK " />
+
+	<!-- Keywords metatag --><meta name="keywords" content="degrees,courses, undergraduates, postgraduates,study,programmes,find a course" />
+
+
+	
+  	
+  	
+
+	<!-- Facebook Meta -->
+    <meta property="og:title" content="<?php echo t4::formatTitle(array(addslashes("Study"), addslashes("Study"))); ?>"/>
+    <meta property="og:site_name" content="University of Dundee" />
+    <meta property="og:image" content="http://www.dundee.ac.uk/media/dundeewebsite/themes/newhope/img/layout/opengraph.jpg" />
+    <meta property="og:image:width" content="470" />
+    <meta property="og:image:height" content="246" />
+  
+</head>
+
+<body id="page_49276" class="newhope landing course-finder site_49276">
+
+		<a href="#maincontent" class="skiptocontent">Skip to Content</a>
+
+	<div id="wrapper" id="top">
+
+		<div class="navbar navbar-site navbar-default navbar-fixed-top" role="navigation">
+
+          	<div class="navbar-main">
+				<div class="container">
+					<div class="row">
+		
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a onclick="_gaq.push(['_trackPageview', 'main-nav-logo'])" class="navbar-brand logo-default" href="/">University of Dundee</a>
+						</div>
+						<div class="navbar-collapse collapse navbar-responsive-collapse-1">
+                          	<div class="navbar-search-mobile hidden-lg hidden-md">
+                                <div class="input-group">
+                                        <form name="frm-search" class="form-inline" method="get" action="http://search.dundee.ac.uk/s/search.html?" class="frm-search navbar-form" role="search">
+                                            <div class="form-group">
+                                                <label for="frm-search" class="search-label">Search:</label>
+                                                <i class="fa fa-search"></i>
+                                                <input type="text" class="form-control" id="frm-search" name="query" placeholder="Search" />
+                                                <input type="hidden" id="search-filter" name="collection" value="website-meta"/>
+                                            </div><!-- / .form-group -->
+                                        </form>
+                                </div><!-- / .input-group -->
+                            </div><!-- / .navbar-search-mobile -->
+							<ul class="nav navbar-nav navbar-right">
+								<!--<li><a onclick="_gaq.push(['_trackPageview', 'main-nav-home'])" href="/">Home</a></li>-->
+								<?php
+									$currentURL = $_SERVER['PHP_SELF'];
+									
+									if (strpos($currentURL, "/study/")!==false){
+										if (strpos($currentURL, "/studentlife/")==false){
+											echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-study\'])" href="/study/">Study</a></span></li>';
+										} else {
+											echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-study\'])" href="/study/">Study</a></li>';
+										}
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-study\'])" href="/study/">Study</a></li>';
+									}
+
+									if (strpos($currentURL, "/about/")!==false){
+										if (strpos($currentURL, "/about/")==false){
+											echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-about\'])" href="/about/">About</a></span></li>';
+										} else {
+											echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-about\'])" href="/about/">About</a></li>';
+										}
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-about\'])" href="/about/">About</a></li>';
+									}
+									
+									if (strpos($currentURL, "/study/studentlife")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-student-life\'])" href="/study/student-life/">Student Life</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-student-life\'])" href="/study/student-life/">Student Life</a></li>';
+									}
+									
+									if (strpos($currentURL, "/main/research")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-research\'])" href="/main/research/">Research</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-research\'])" href="/main/research/">Research</a></li>';
+									}
+									
+									if (strpos($currentURL, "/main/business")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-business\'])" href="/main/business/">Business</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-business\'])" href="/main/business/">Business</a></li>';
+									}
+									
+									if (strpos($currentURL, "/alumni")!==false){
+										echo '<li><span class="currentbranch0"><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-alumni\'])" href="/alumni/">Alumni</a></span></li>';
+									} else {
+										echo '<li><a onclick="_gaq.push([\'_trackPageview\', \'main-nav-business\'])" href="/alumni/">Alumni</a></li>';
+									}
+								?>
+							</ul>
+						</div>
+		
+					</div>
+				</div>
+			</div><!-- / .navbar-main -->
+
+          	<div class="navbar-utility">
+				<div class="container">
+					<div class="row">
+		
+						<div class="navbar-collapse collapse navbar-responsive-collapse-1">
+							<ul class="nav navbar-nav navbar-left">
+								<li class="dropdown">
+									<a href="//www.dundee.ac.uk/students/" class="dropdown-toggle" data-toggle="dropdown">Current Students <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li class="dropdown-header">Popular Resources</li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-webmail'])" href="//webmail.dundee.ac.uk/">Webmail</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-mydundee'])" href="//my.dundee.ac.uk/">My Dundee</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-evision'])" href="//evision.dundee.ac.uk/">eVision</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-timetable'])" href="//timetable.dundee.ac.uk/">University Timetable</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-it'])" href="/it/">IT Support</a></li>
+                                        <li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-library'])" href="/library/">Library</a></li>
+										<li class="divider"></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'cs-nav-student-home'])" href="/students/"><span class="glyphicon glyphicon-home"></span> Current Students</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="//www.dundee.ac.uk/staff/" class="dropdown-toggle" data-toggle="dropdown">Staff <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li class="dropdown-header">Popular Resources</li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-webmail'])" href="//webmail.dundee.ac.uk/">Webmail</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-mydundee'])" href="//my.dundee.ac.uk/">My Dundee</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-timetable'])" href="//timetable.dundee.ac.uk/">University Timetable</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-calendars'])" href="/main/useful-dates/">University Calendars</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-roombookings'])" href="//www.dundee.ac.uk/roombookings/">Room Bookings</a></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-it'])" href="/it/">IT Support</a></li>
+                                        <li><a onclick="_gaq.push(['_trackPageview', 'staff-evision'])" href="//evision.dundee.ac.uk/">eVision</a></li>
+                                        <li><a onclick="_gaq.push(['_trackPageview', 'staff-library'])" href="/library/">Library</a></li>
+										<li class="divider"></li>
+										<li><a onclick="_gaq.push(['_trackPageview', 'staff-nav-staff-home'])" href="/staff/"><span class="glyphicon glyphicon-home"></span> Staff</a></li>
+									</ul>
+								</li>
+                              	<li class="hidden-lg hidden-md"><a href="/main/colleges-schools/">Colleges &amp; Schools</a></li>
+								<li class="hidden-lg hidden-md"><a href="/main/services/">Services</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+                              	<li class="dropdown nav-utility-search-dd search-filters">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i> <b class="caret"></b></a>
+                                    <ul class="dropdown-menu filters">
+                                        <li class="dropdown-header">University Search</li>
+                                        <li data-label="Search" data-collection="website-meta" class="active filter"><a href="#">Website Search</a></li>
+                                        <li data-label="Course Finder" data-collection="courses" class="filter"><a href="#">Course Finder</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="//www.dundee.ac.uk/main/a-z/">University A-Z</a></li>
+                                        <li><a href="/main/colleges-schools/">Colleges &amp; Schools</a></li>
+                                        <li><a href="/main/services/">Services</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-utility-search">
+                                    <div class="input-group">
+                                            <form name="frm-search" class="form-inline" method="get" action="http://search.dundee.ac.uk/s/search.html?" class="frm-search navbar-form" role="search">
+                                                <div class="form-group">
+                                                <label for="frm-search" class="search-label">Search:</label>
+                                                <input type="text" class="form-control" id="frm-search" name="query"/>
+                                                <input type="hidden" id="search-filter" name="collection" value="website-meta"/>
+                                                </div><!-- / .form-group -->
+                                            </form>
+                                    </div><!-- / .input-group -->
+                                </li>
+							</ul>
+						</div>
+						
+					</div>
+				</div>
+			</div><!-- / .navbar-utility -->
+
+			<div class="clearfix"></div>
+		</div><!-- / .navbar -->
+      
+      	<div class="navbar-break"></div>
+
+  
+  	 
+<!-- START New Hope: Banner - text/newhope-banner -->
+<div class="l-container-fluid alert-container postgraduate-taught-courses">
+	<div class="alert" id="postgraduate-taught-courses">
+		<div class="container">
+          <span>Clearing - Check out our course vacancies or call +44(0)1382 386386</span> <a onclick="ga('send', 'event', { eventCategory: 'banner-alert-244213'});" href="http://bit.ly/1K7fFa4">Clearing <i class="fa fa-angle-right"></i></a>
+		</div>
+	</div>
+</div>
+<!-- END New Hope: Banner - text/newhope-banner -->
+ 
+		
+		<header class="page-header" role="contentinfo">
+            <div class="container">
+                <div class="row">
+      				<!-- navigation object : New Hope - Page Heading - text/newhope --> 
+<!-- START New Hope - Page Heading - text/newhope -->
+<div class="col-md-12">
+	<a name="d.en.183604"></a>
+	<h1>Study</h1>
+</div>
+<div class="headline-container">
+	<ol class="breadcrumb"><li><a href="/" title=""><span class="glyphicon glyphicon-home"></span></a></li><li>Study</li></ol>
+	<p class="headline">Learn from global experts whose research<br /> is at the forefront of discovery.</p>
+</div>
+<!-- END New Hope - Page Heading - text/newhope -->
+ 
+              	</div>
+          	</div>
+          	
+			 <div class="course-search-wrapper">
+				<div class="container search-course-container">
+					<div class="row">
+				
+						<div class="search-course search-course-shadow">
+							<div class="search-course-input-container">
+								<form class="form-inline" role="form" action="http://search.dundee.ac.uk/s/search.html?collection=courses" method="get">
+									<div class="form-group">
+										<i class="fa fa-search"></i>
+										<label class="sr-only" for="frm-qry-courses">Course Finder</label>
+										<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+										<input type="text" name="query" id="frm-qry-courses" placeholder="Course Finder" class="ui-autocomplete-input" autocomplete="off">
+										<input type="hidden" name="collection" value="courses">
+										<!--<input type="hidden" name="profile" value="_default_preview">-->
+										<button type="submit" name="frmSubmit" id="frm-submit">Find a Course</button>
+									</div>
+								</form>
+							</div>
+							<div>
+								<ul class="search-course-options">
+									<li><a href="http://search.dundee.ac.uk/s/search.html?collection=courses&query=&sort=title" title="">All Courses <i class="fa fa-angle-right"></i></a></li>
+								</ul>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+				
+					</div>
+				</div>
+			</div>
+      	</header>
+      	
+        <div class="clearfix"></div>
+      
+		<div id="main">
+                                          <div class="container">
+	<div class="row">
+
+		<section class="l-container patches patches-top">	
+			<div class="patch">
+              	<a href="/study/ug/" title=""><img src="/media/dundeewebsite/themes/newhope/img/study/lecture.jpg"
+  alt="Lecture Theatre"
+  title="Lecture Theatre"
+  style="width : 311px;
+    height : 170px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/>
+				<dl>
+					<dt><span>Undergraduate Study</span></dt>
+					<dd><span>Find out what makes us your best choice for undergraduate study <i class="fa fa-angle-right"></i></span></dd>
+				</dl></a>
+			</div>
+			<div class="patch">
+				<a href="/study/pg/" title=""><img src="/media/dundeewebsite/themes/newhope/img/study/lab.jpg"
+  alt="Lab"
+  title="Lab"
+  style="width : 312px;
+    height : 170px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/>
+				<dl>
+					<dt><span>Postgraduate Study</span></dt>
+					<dd><span>Find out more about our range of postgraduate degree and research opportunities <i class="fa fa-angle-right"></i></span></dd>
+				</dl></a>
+			</div>
+			<div class="patch">
+				<a href="/study/international/" title=""><img src="/media/dundeewebsite/themes/newhope/img/study/group.jpg"
+  alt="Students"
+  title="Students"
+  style="width : 312px;
+    height : 170px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/>
+				<dl>
+					<dt><span>International Study</span></dt>
+					<dd><span>Information for our international applicants <i class="fa fa-angle-right"></i></span></dd>
+				</dl></a>
+			</div>
+			<div class="clearfix"></div>
+		</section>
+
+		<section class="l-container patches">	
+			<div class="patch">
+				<a href="/study/visitus/" title=""><img src="/media/dundeewebsite/themes/newhope/img/study/student.jpg"
+  alt="Student holding books"
+  title="Student holding books"
+  style="width : 311px;
+    height : 170px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/>
+				<dl>
+					<dt><span>Visit Us</span></dt>
+					<dd><span>Visit our campus to get a taster of life at Dundee <i class="fa fa-angle-right"></i></span></dd>
+				</dl></a>
+			</div>
+			<div class="patch">
+				<a href="/study/scholarships-fees/" title=""><img src="/media/dundeewebsite/themes/newhope/img/study/scholarships-fees.jpg"
+  alt="Students"
+  title="Students"
+  style="width : 311px;
+    height : 170px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/>
+				<dl>
+					<dt><span>Scholarships & Fees</span></dt>
+					<dd><span>Learn more about our fees and funding options, including bursaries and scholarships available to our students <i class="fa fa-angle-right"></i></span></dd>
+				</dl></a>
+			</div>
+			<div class="patch">
+				<a href="/study/short/" title=""><img src="/media/dundeewebsite/themes/newhope/img/study/quad.jpg"
+  alt="Geddes Quadrangle"
+  title="Geddes Quadrangle"
+  style="width : 311px;
+    height : 169px;
+    border : ;
+    padding : ;
+    margin : ;
+    float : ;"
+  class=""
+/>
+				<dl>
+					<dt><span>Short Courses</span></dt>
+					<dd><span>Find out about our range of flexible learning opportunities available <i class="fa fa-angle-right"></i></span></dd>
+				</dl></a>
+			</div>
+			<div class="clearfix"></div>
+		</section>
+      
+  	</div>
+</div>
+		 <div class="jumbotron">
+			<section class="container">
+				<div class="row">
+
+					<div class="cta-student-life">
+						<h3>Student Life at&nbsp;Dundee</h3>
+						<p>Studying at the University of Dundee is a richly rewarding experience.<br> 
+						Learn more about our culture, the city and life on campus.</p>
+						<p><a href="/study/student-life/" class="btn btn-primary btn-lg" role="button">Student Life at Dundee <i class="fa fa-angle-right"></i></a></p>
+					</div>
+
+				</div>
+			</section>
+		</div>			 
+<!-- START New Hope - Isotope Gallery - text/isotope-gallery -->
+<div class="gallery-isotope-container">
+	<div class="gallery-isotope" id="isotope-gallery-admissions"></div>
+</div><!-- / #isotope-gallery-admissions -->
+<!-- END New Hope - Isotope Gallery - text/isotope-gallery -->
+ 
+
+		</div><!-- / #main -->
+
+		<div class="push"></div>
+	</div><!-- / .wrapper-site -->
+
+		<footer role="contentinfo">
+
+		<div class="ft-tabs">
+			<div class="container">
+				<a href="/main/feedback/">Leave Feedback</a>
+				<a href="/study/make-an-enquiry/">Make an Enquiry</a>
+			</div>
+		</div><!-- / .ft-tabs -->
+
+		
+
+		
+
+		<div class="ft-top">
+			<div class="container">
+				<div class="row">
+					<ul class="breadcrumb">
+						<li><a href="/" title=""><span class="glyphicon glyphicon-home"></span></a></li>
+						<li>Study</li>	
+					</ul>
+				</div>
+			</div>
+		</div><!-- / .ft-top -->
+
+			<div class="container">
+			<div class="row">
+
+              			<div class="ft-left">
+					<div class="ft-social">
+						<ul class="fa-ul social">
+							<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-twitter'])" href="http://uod.ac.uk/twitter" title="Twitter"><i class="fa-li fa fa-twitter-square fa-2x"></i>Twitter</a></li>
+							<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-facebook'])" href="http://uod.ac.uk/facebook" title="Facebook"><i class="fa-li fa fa-facebook-square fa-2x"></i>Facebook</a></li>
+							<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-youtube'])" href="http://uod.ac.uk/youtube" title="Twitter"><i class="fa-li fa fa-youtube-square fa-2x"></i>YouTube</a></li>
+						</ul>
+					</div><!-- / .ft-social -->
+				</div><!-- / .ft-left -->
+	
+				<div class="ft-links">
+					<ul>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-about'])" href="/about/">About</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-study'])" href="/study/">Study</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-studentlife'])" href="/study/student-life/">Student Life</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-research'])" href="/main/research/">Research</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-business'])" href="/main/business/">Business</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-alumni'])" href="/alumni/">Alumni</a></li>
+                    </ul>
+                    <ul>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-ugadmissions'])" href="/study/ug/">Undergraduate Admissions</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-pgadmissions'])" href="/study/pg/">Postgraduate Admissions</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-interadmissions'])" href="/study/international/">International Admissions</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-uniadmissions'])" href="/accommodation/">University Accommodation</a></li>
+                    </ul>
+                    <ul>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-collegesandschools'])" href="/main/colleges-schools/">Colleges &amp; Schools</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-services'])" href="/main/services/">Services</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-disabilitysupport'])" href="/disabilityservices/">Disability Support</a></li>
+                        <li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-jobs'])" href="//jobs.dundee.ac.uk/">Jobs</a></li>
+                    </ul>
+				</div><!-- / .ft-links -->
+				
+				<div class="ft-address">
+					<address>
+						<strong>University of Dundee</strong><br/>
+						Nethergate<br/>
+						Dundee<br/>
+						Scotland, UK<br/>
+						DD1 4HN
+					</address>
+					<ul>
+						<li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-contact'])" href="/contact/">Contact</a></li><!--
+						--><li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-travel'])" href="/travel/">Travel</a></li><!--
+--><li><a onclick="_gaq.push(['_trackPageview', 'ft-nav-campusmap'])" href="/main/campusmap/">Campus Map</a></li>
+					</ul>
+				</div><!-- / .ft-address -->
+
+			</div>
+		</div><!-- / .container -->
+		
+      		<div class="ft-block">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="logo-qap">
+                        <a href="//www.dundee.ac.uk/about/our-awards/"><img src="/media/dundeewebsite/src/img/layout/footer/qap.png" alt="Queen's Anniversary Prize" /></a>
+                    </div>
+    
+                    <div class="logo-athena">
+                        <a href="//www.dundee.ac.uk/about/our-awards/"><img src="/media/dundeewebsite/src/img/layout/footer/athena-swan.png" alt="Athena Swan Bronze Award" /></a>
+                    </div>
+    
+                    <div class="logo-the">
+                        <a href="//www.dundee.ac.uk/about/our-awards/"><img src="/media/dundeewebsite/src/img/layout/footer/the.png" alt="THE - Times Higher Education" /></a>
+                    </div>
+    
+                </div>
+            </div><!-- / .container -->
+        </div>
+    
+        <div class="ft-block">
+            <div class="container">
+                <div class="row">
+    
+                    <div class="logo-group">
+                        <a href="//www.ahspartnership.org.uk/"><img src="/media/dundeewebsite/src/img/layout/footer/ahsp.png" alt="AHSP - Academic Health Science Partnership in Tayside" class="logo-ahsp" /></a>
+                        <a href="//www.dundeecityofdesign.com"><img src="/media/dundeewebsite/src/img/layout/footer/unesco.png" alt="UNESCO - United Nations Educational, Scientific and Cultural Organization" class="logo-unesco" /></a>
+                        <a href="//www.vandadundee.org/"><img src="/media/dundeewebsite/src/img/layout/footer/vanda.png" alt="Founding partner of V&amp;A Museum of Design Dundee" class="logo-vanda" /></a>
+                    </div>
+    
+                </div>
+            </div><!-- / .container -->
+        </div>
+      	
+		<div class="ft-bottom">
+			<div class="container">
+				<div class="row">
+               
+                  			<ul>
+						<li>The University of Dundee is a Scottish Registered Charity, No. SC015096</li>
+						<li> &copy; University of Dundee</li>
+						<li><a onclick="_gaq.push(['_trackPageview', 'legal-nav-disclaimer'])" href="/legal/disclaimer/">Disclaimer</a></li>
+					</ul>
+					<a href="#top" class="back-top">BACK TO TOP <span class="glyphicon glyphicon-arrow-up"></span></a>
+                  
+				</div>
+			</div>
+		</div><!-- / .ft-bottom -->
+
+	</footer>
+	
+	<!-- Scripts -->
+	<?php
+		$scriptMain = '/media/dundeewebsite/themes/newhope/js/main010715.js';
+		if(!strpos($scriptMain, 'SiteManager?ctfn') !== FALSE) {
+        		$scriptMain = substr($scriptMain, 0, -3);
+		}
+	?>
+	<script data-main="<?php echo $scriptMain; ?>" src="/media/dundeewebsite/vendors/requirejs/require.js"></script>
+	
+	<script type="text/javascript">
+      setTimeout(function(){var a=document.createElement("script");
+      var b=document.getElementsByTagName("script")[0];
+      a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0011/1666.js?"+Math.floor(new Date().getTime()/3600000);
+      a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+    
+	<script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-2239292-1', 'dundee.ac.uk');
+      ga('send', 'pageview');
+    </script>
+
+	<a class="t4Edit-page" href="https://wcm.dundee.ac.uk/terminalfour/SiteManager?ctfn=content&amp;fnno=30&amp;sid=49276">Edit</a>
+
+	
+
+<!-- tmpl new hope -->
+
+</body>
+</html>
